@@ -1,1 +1,8 @@
-/node_modules
+# Dependency directory
+node_modules
+
+# local env variables
+.env
+
+# truffle build directory
+build/
