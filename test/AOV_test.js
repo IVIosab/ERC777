@@ -1,55 +1,49 @@
-const AOV = artifacts.require("./AOV.sol");
-const { singletons } = require("@openzeppelin/test-helpers");
+const { accounts, contract, web3 } = require('@openzeppelin/test-environment');
 
-contract('AOV', (accounts,registryFunder,creator) =>{
-    const initialSupply = 10000;
-    const name = "AttackOnVapers";
-    const symbol = "AOV";
-    const granularity = 1;
-    const decimals = 18;
+const { expect } = require('chai');
+require('chai').should();
 
-    before(async()=>{
+const { expectEvent, singletons, constants } = require('@openzeppelin/test-helpers');
+const { ZERO_ADDRESS } = constants;
+
+const AOV = contract.fromArtifact('AOV');
+
+describe('AOV', function () {
+    const [registryFunder, creator, operator] = accounts;
+
+    beforeEach(async function () {
         this.erc1820 = await singletons.ERC1820Registry(registryFunder);
-        this.AOV = await AOV.deployed();
-    })
-    
-    it('deployed successfully', async()=>{
-        const address = await this.AOV.address;
-        assert.notEqual(address, 0x0);
-        assert.notEqual(address, '');
-        assert.notEqual(address, null);
-        assert.notEqual(address, undefined);
-    })
+        this.token = await AOV.new(10000, [],{from: creator});
+    });
 
-    it('returns correct totalSupply', async()=>{
-        const tokenSupply = await this.AOV.totalSupply();
-        assert.equal(initialSupply, tokenSupply.toNumber());
-    })
-    
-    it('returns correct name of token', async()=>{
-        const tokenName = await this.AOV.name();
-        assert.equal(name, tokenName);
-    })
-    
-    it('returns correct symbol of token', async()=>{
-        const tokenSymbol = await this.AOV.symbol();
-        assert.equal(symbol, tokenSymbol);
-    })
+    it('returns correct name of token', async function () {
+        expect(await this.token.name()).to.equal('AttackOnVapers');
+    });
 
-    it('returns correct granularity', async()=>{
-        const tokeGranularity = await this.AOV.granularity();
-        assert.equal(granularity, tokeGranularity);
-    })
-
-    it('returns correct decimals', async()=>{
-        const tokenDecimals = await this.AOV.decimals();
-        assert.equal(decimals, tokenDecimals);
-    })
+    it('returns correct symbol of token', async function () {
+        expect(await this.token.symbol()).to.equal('AOV');
+    });
     
-    it('owner\'s balance == totalSupply', async()=>{
-        const balance = await this.AOV.balanceOf(accounts[0])
-        const supply = await this.AOV.totalSupply()
-        assert.equal(balance.toNumber(), supply.toNumber())
-    })
+    it('returns correct totalSupply of token', async function () {
+        expect(await this.token.totalSupply()).to.eql(web3.utils.toBN(10000));
+    });
 
-})
+    it('returns correct granularity', async function () {
+        expect(await this.token.granularity()).to.eql(web3.utils.toBN(1));
+    });
+
+    it('returns correct decimals', async function () {
+        expect(await this.token.decimals()).to.eql(web3.utils.toBN(18));
+    });
+
+    it('owner\'s balance == totalSupply', async function () {
+        const totalSupply = await this.token.totalSupply();
+        const creatorBalance = await this.token.balanceOf(creator);
+        expect(creatorBalance).to.eql(totalSupply)
+        await expectEvent.inConstruction(this.token, 'Transfer', {
+            from: ZERO_ADDRESS,
+            to: creator,
+            value: totalSupply,
+        });
+    });
+});
