@@ -9,7 +9,7 @@ const { ZERO_ADDRESS } = constants;
 const AOV = contract.fromArtifact('AOV');
 
 describe('AOV', function () {
-    const [registryFunder, creator, operator] = accounts;
+    const [registryFunder, creator] = accounts;
 
     beforeEach(async function () {
         this.erc1820 = await singletons.ERC1820Registry(registryFunder);
