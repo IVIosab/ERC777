@@ -19,7 +19,7 @@ describe('AOV', function () {
         this.timeout(3000);
         this.erc1820 = await singletons.ERC1820Registry(registryFunder);
         this.bulk = await BulkSend.new();
-        this.token = await AOV.new(10000, [this.bulk.address],{from: creator});
+        this.token = await AOV.new(10**10, [this.bulk.address],{from: creator});
     });
 
     it('BulkSends with fixed value', async function () {
@@ -27,7 +27,7 @@ describe('AOV', function () {
         const acc1Balance = await this.token.balanceOf(creator); 
         const acc2Balance = await this.token.balanceOf(recipient1); 
         const acc3Balance = await this.token.balanceOf(recipient2); 
-        expect(acc1Balance).to.eql(web3.utils.toBN(9980));
+        expect(acc1Balance).to.eql(web3.utils.toBN(10**10-20));
         expect(acc2Balance).to.eql(web3.utils.toBN(10));
         expect(acc3Balance).to.eql(web3.utils.toBN(10));
     });
@@ -37,7 +37,7 @@ describe('AOV', function () {
         const acc1Balance = await this.token.balanceOf(creator); 
         const acc2Balance = await this.token.balanceOf(recipient1); 
         const acc3Balance = await this.token.balanceOf(recipient2); 
-        expect(acc1Balance).to.eql(web3.utils.toBN(9970));
+        expect(acc1Balance).to.eql(web3.utils.toBN(10**10-30));
         expect(acc2Balance).to.eql(web3.utils.toBN(10));
         expect(acc3Balance).to.eql(web3.utils.toBN(20));
     });

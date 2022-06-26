@@ -11,7 +11,7 @@ module.exports = async function (deployer, network, accounts) {
   const BulkSendOperator = await BulkSend.deployed();
   await deployer.deploy(StaticPriceSeller);
   const StaticPriceSellerOperator = await StaticPriceSeller.deployed();
-  await deployer.deploy(AOV,10000,[BulkSendOperator.address,StaticPriceSellerOperator.address]);
+  await deployer.deploy(AOV,10**10,[BulkSendOperator.address,StaticPriceSellerOperator.address]);
   const token = await AOV.deployed();
   await deployer.deploy(AOVRecipient, token.address)
 };

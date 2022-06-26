@@ -19,7 +19,7 @@ describe('AOV', function () {
         this.timeout(3000);
         this.erc1820 = await singletons.ERC1820Registry(registryFunder);
         this.static = await StaticPriceSeller.new();
-        this.token = await AOV.new(10000, [this.static.address],{from: creator});
+        this.token = await AOV.new(10**10, [this.static.address],{from: creator});
         this.token.send(recipient1, 100, data,{from: creator});
         this.token.send(recipient2, 100, data,{from: creator});
     });

@@ -16,8 +16,8 @@ describe('AOVSender', function () {
   beforeEach(async function () {
     this.timeout(3000);
     this.erc1820 = await singletons.ERC1820Registry(registryFunder);
-    this.token = await AOV.new(10000, [],{from: creator});
-    const amount = new BN(10000);
+    this.token = await AOV.new(10**10, [],{from: creator});
+    const amount = new BN(10**10);
     await this.token.send(holder, amount, data, { from: creator });
     this.sender = await AOVSender.new({ from: creator });
   });

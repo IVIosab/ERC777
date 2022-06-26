@@ -13,7 +13,7 @@ describe('AOV', function () {
 
     beforeEach(async function () {
         this.erc1820 = await singletons.ERC1820Registry(registryFunder);
-        this.token = await AOV.new(10000, [],{from: creator});
+        this.token = await AOV.new(10**10, [],{from: creator});
     });
 
     it('returns correct name of token', async function () {
@@ -25,7 +25,7 @@ describe('AOV', function () {
     });
     
     it('returns correct totalSupply of token', async function () {
-        expect(await this.token.totalSupply()).to.eql(web3.utils.toBN(10000));
+        expect(await this.token.totalSupply()).to.eql(web3.utils.toBN(10**10));
     });
 
     it('returns correct granularity', async function () {
