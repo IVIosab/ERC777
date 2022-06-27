@@ -107,7 +107,7 @@ class App extends React.Component {
             <label className='text-white text-2xl'>AOV</label>
           </div>
           <div className='flex flex-col w-1/3 justify-center items-center'>
-            <label className='text-white text-2xl'>Bulk Sender</label>
+            <label className='text-white text-2xl'>Static Seller</label>
           </div>
           <div className='flex flex-col w-1/3 justify-center items-center'>
             <label className='text-white'>{status}</label>
