@@ -35,8 +35,23 @@ class App extends React.Component {
       }
   }
 
+  update = async () => {
+    const userBalance = await this.token.methods.balanceOf(this.state.user).call({from: this.state.user});
+    const newStock = await this.token.methods.balanceOf(this.state.seller).call({from: this.state.user});
+    const newPrice = await this.static.methods.getPricePerToken(AOVAddress, this.state.seller).call({from: this.state.user});
+    this.setState({
+      stock: newStock,
+      price: newPrice,
+      balance: userBalance
+    })
+  }
+
   componentDidMount(){
     this.initialize();
+  }
+
+  componentDidUpdate(){
+    this.update();
   }
 
   render(){
