@@ -115,7 +115,7 @@ class App extends React.Component {
             <label className='text-white'>My Balance: {this.state.balance}</label>
           </div>
         </div>
-        <div className='h-screen gradient-bg-services flex flex-row justify-center items-center'>
+        <div className='min-h-screen gradient-bg-services pt-80'>
           <div className='flex flex-col justify-center items-center'>
             <label className='text-white'>Seller: {this.state.seller.slice(0,6)}...{this.state.seller.slice(this.state.seller.length-4)}</label>
             <label className='text-white'>Price: {this.state.price} WEI</label>
