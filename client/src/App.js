@@ -32,8 +32,19 @@ class App extends React.Component {
       }
   }
 
+  update = async () => {
+    const userBalance = await this.token.methods.balanceOf(this.state.user).call({from: this.state.user});
+    this.setState({
+      balance: userBalance
+    })
+  }
+
   componentDidMount(){
     this.initialize();
+  }
+
+  componentDidUpdate(){
+    this.update();
   }
 
   render(){
