@@ -84,6 +84,34 @@ class App extends React.Component {
     this.update();
   }
 
+  handleAmountChange(e){
+    this.setState({
+      value: e.target.value
+    })
+  }
+
+  handleAccountsChange(i, e){
+    let newAddresses = this.state.addresses;
+    newAddresses[i] = e.target.value;
+    this.setState({
+      addresses: newAddresses
+    });
+  }
+
+  addRow(){
+    this.setState({
+      addresses: ["", ...this.state.addresses]
+    });
+  }
+
+  removeRow(i){
+    let newAddresses = this.state.addresses;
+    newAddresses.splice(i, 1);
+    this.setState({ 
+      addresses: newAddresses 
+    });
+  }
+
   render(){
     return (
       <div className='gradient-bg-welcome'>
