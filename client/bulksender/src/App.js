@@ -42,12 +42,12 @@ class App extends React.Component {
   send = async () => {
     for(let i=0;i<this.state.addresses.length;i++){
       if(!this.web3.utils.isAddress(this.state.addresses[i])){
-        alert(`bruh... "${this.state.addresses[i]}" is not an address`);
+        alert(`"${this.state.addresses[i]}" is not an address`);
         return;
       }
     }
     if(this.state.value<0){
-      alert(`You can't send negative tokens dude`)
+      alert(`You can't send a negative amount of tokens`)
       return;
     }
     this.setState({

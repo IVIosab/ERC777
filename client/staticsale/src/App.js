@@ -48,7 +48,7 @@ class App extends React.Component {
 
   buy = async () => {
     if(this.state.value<0){
-      alert(`You can't purchase negative tokens`)
+      alert(`You can't purchase a negative amount of tokens`)
       return;
     }
     this.setState({
