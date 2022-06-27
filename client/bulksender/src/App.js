@@ -163,7 +163,7 @@ class App extends React.Component {
       status = "Connect with MetaMask";
     }
     return (
-      <div>
+      <div className='flex flex-col'>
         <div className='gradient-bg-welcome flex'>
           <div className='flex flex-col w-1/3 justify-center items-center'>
             <label className='text-white text-2xl'>AOV</label>
