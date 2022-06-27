@@ -9,7 +9,7 @@ const { ZERO_ADDRESS } = constants;
 const AOV = contract.fromArtifact('AOV');
 const BulkSend = contract.fromArtifact('BulkSend');
 
-describe('AOV', function () {
+describe('BulkSend', function () {
     const [registryFunder, creator, recipient1, recipient2] = accounts;
     const data = web3.utils.sha3('777TestData');
 
