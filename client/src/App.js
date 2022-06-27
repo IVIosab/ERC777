@@ -1,25 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import detectEthereumProvider from '@metamask/detect-provider';
+import Web3 from 'web3';
+import {AOVabi, AOVAddress, BulkSendabi, BulkSendAddress} from './utils/constants';
+import {Button} from './components/Button'
+import {Input} from './components/Input'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      user: "",
+      balance: 0,
+      addresses: [""],
+      value: 0,
+      sendingStatus: false
+    };
+  }
+
+  initialize = async () => {
+      const provider = await detectEthereumProvider();
+      if (provider) {
+        this.web3 = new Web3(provider);
+        this.token = new this.web3.eth.Contract(AOVabi,AOVAddress);
+        this.bulk = new this.web3.eth.Contract(BulkSendabi,BulkSendAddress);
+        const accounts = await window.ethereum.request({method:'eth_requestAccounts'})
+        this.setState({user: accounts[0]});
+      } else {
+        alert('Please install MetaMask!');
+      }
+  }
+
+  componentDidMount(){
+    this.initialize();
+  }
+
+  render(){
+    return (
+      <div className='gradient-bg-welcome'>
+      </div>
+    )  
+  }
 }
-
 export default App;
