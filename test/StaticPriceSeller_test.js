@@ -9,8 +9,6 @@ const { ZERO_ADDRESS } = constants;
 const AOV = contract.fromArtifact('AOV');
 const StaticPriceSeller = contract.fromArtifact('StaticPriceSeller');
 
-const data = 
-
 describe('AOV', function () {
     const [registryFunder, creator, recipient1, recipient2, recipient3] = accounts;
     const data = web3.utils.sha3('777TestData');
