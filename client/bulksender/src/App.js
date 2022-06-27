@@ -191,7 +191,7 @@ class App extends React.Component {
             {
               this.state.sendingStatus 
               ?
-              null
+              <label className='text-white'>Loading Transaction...</label>
               :
               <Button 
                 onClick={()=>this.send()}
