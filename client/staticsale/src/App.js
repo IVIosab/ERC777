@@ -46,12 +46,50 @@ class App extends React.Component {
     })
   }
 
+  buy = async () => {
+    if(this.state.value<0){
+      alert(`You can't purchase negative tokens`)
+      return;
+    }
+    this.setState({
+      sendingStatus: true
+    })
+    const transaction = await this.static.methods.send(AOVAddress, this.state.seller).send({from: this.state.user, value: this.state.value*this.state.price})
+    .then( 
+      (result) => {
+        console.log(result);
+        alert("Transaction Completed")
+        this.setState({
+          addresses: [""],
+          value: 0,
+          sendingStatus: false
+        })
+      }
+    )
+    .catch(
+      (err) => {
+        console.log(err);
+        alert("Transaction Failed")
+        this.setState({
+          sendingStatus: false
+        })
+      }
+    )
+    console.log(transaction);
+  }
+
   componentDidMount(){
     this.initialize();
   }
 
   componentDidUpdate(){
     this.update();
+  }
+
+  handleAmountChange(e){
+    this.setState({
+      value: e.target.value
+    })
   }
 
   render(){
