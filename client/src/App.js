@@ -163,13 +163,21 @@ class App extends React.Component {
       status = "Connect with MetaMask";
     }
     return (
-      <div className='gradient-bg-welcome'>
-        <div className='flex flex-col'>
-          <label className='text-white'>{status}</label>
-          <label className='text-white'>Current Account: {this.state.user.slice(0,6)}...{this.state.user.slice(this.state.user.length-4)}</label>
-          <label className='text-white'>My Balance: {this.state.balance}</label>
+      <div>
+        <div className='gradient-bg-welcome flex'>
+          <div className='flex flex-col w-1/3 justify-center items-center'>
+            <label className='text-white text-2xl'>AOV</label>
+          </div>
+          <div className='flex flex-col w-1/3 justify-center items-center'>
+            <label className='text-white text-2xl'>Bulk Sender</label>
+          </div>
+          <div className='flex flex-col w-1/3 justify-center items-center'>
+            <label className='text-white'>{status}</label>
+            <label className='text-white'>Current Account: {this.state.user.slice(0,6)}...{this.state.user.slice(this.state.user.length-4)}</label>
+            <label className='text-white'>My Balance: {this.state.balance}</label>
+          </div>
         </div>
-        <div className='flex flex-col justify-center items-center'>
+        <div className='h-screen gradient-bg-services flex flex-col justify-center items-center'>
           <label className='text-white'>Accounts</label>
           {formattedRows}
           <label className='text-white'>Amount</label>
