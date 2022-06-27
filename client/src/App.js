@@ -169,6 +169,28 @@ class App extends React.Component {
           <label className='text-white'>Current Account: {this.state.user.slice(0,6)}...{this.state.user.slice(this.state.user.length-4)}</label>
           <label className='text-white'>My Balance: {this.state.balance}</label>
         </div>
+        <div className='flex flex-col justify-center items-center'>
+          <label className='text-white'>Accounts</label>
+          {formattedRows}
+          <label className='text-white'>Amount</label>
+          <Input
+            handleChange={(e)=>this.handleAmountChange(e)}
+            type="number"
+            name="amount"
+            value={this.state.value}
+          />
+          {
+            this.state.sendingStatus 
+            ?
+            null
+            :
+            <Button 
+              onClick={()=>this.send()}
+              name="Send"
+              color="blue"
+            />
+          }
+        </div>
       </div>
     )  
   }
