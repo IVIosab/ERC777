@@ -112,6 +112,43 @@ class App extends React.Component {
     });
   }
 
+  renderInput(i){
+    let buttonName = "";
+    let buttonColor = "";
+    let buttonOnClick = null;
+    if(i){
+      buttonName = "x";
+      buttonColor = "red";
+      buttonOnClick = ()=>this.removeRow(i)
+    }
+    else{
+      buttonName = "+";
+      buttonColor = "blue";
+      buttonOnClick = ()=>this.addRow(i)
+    }
+    return(
+      <div>
+        <Input 
+          handleChange={(e)=>this.handleAccountsChange(i,e)}
+          type="text"
+          name="account"
+          value= {(this.state.addresses[i])}
+        />
+        {
+          this.state.sendingStatus 
+          ? 
+          null
+          :
+          <Button
+            onClick={buttonOnClick}
+            name={buttonName}
+            color={buttonColor}
+          />
+        }
+      </div>
+    )
+  } 
+
   render(){
     return (
       <div className='gradient-bg-welcome'>
