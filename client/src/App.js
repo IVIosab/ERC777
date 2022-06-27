@@ -39,6 +39,43 @@ class App extends React.Component {
     })
   }
 
+  send = async () => {
+    for(let i=0;i<this.state.addresses.length;i++){
+      if(!this.web3.utils.isAddress(this.state.addresses[i])){
+        alert(`bruh... "${this.state.addresses[i]}" is not an address`);
+        return;
+      }
+    }
+    if(this.state.value<0){
+      alert(`You can't send negative tokens dude`)
+      return;
+    }
+    this.setState({
+      sendingStatus: true
+    })
+    const transaction = await this.bulk.methods.send(AOVAddress, this.state.addresses, this.state.value, "0x0123").send({from: this.state.user})
+    .then( 
+      (result) => {
+        console.log(result);
+        alert("Transaction Completed")
+        this.setState({
+          addresses: [""],
+          value: 0,
+          sendingStatus: false
+        })
+      }
+    )
+    .catch(
+      (err) => {
+        console.log(err);
+        alert("Transaction Failed")
+        this.setState({
+          sendingStatus: false
+        })
+      }
+    )
+  }
+
   componentDidMount(){
     this.initialize();
   }
