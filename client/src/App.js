@@ -150,8 +150,25 @@ class App extends React.Component {
   } 
 
   render(){
+    let rows = [];
+    for(let i=0;i<this.state.addresses.length;i++){
+      rows.push(this.renderInput(i));
+    }
+    let formattedRows = (<div>{rows}</div>)
+    let status;
+    if(this.state.user){
+      status = "Connected!";
+    }
+    else{
+      status = "Connect with MetaMask";
+    }
     return (
       <div className='gradient-bg-welcome'>
+        <div className='flex flex-col'>
+          <label className='text-white'>{status}</label>
+          <label className='text-white'>Current Account: {this.state.user.slice(0,6)}...{this.state.user.slice(this.state.user.length-4)}</label>
+          <label className='text-white'>My Balance: {this.state.balance}</label>
+        </div>
       </div>
     )  
   }
