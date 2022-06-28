@@ -40,20 +40,26 @@ class App extends React.Component {
   }
 
   send = async () => {
-    for(let i=0;i<this.state.addresses.length;i++){
-      if(!this.web3.utils.isAddress(this.state.addresses[i])){
-        alert(`"${this.state.addresses[i]}" is not an address`);
-        return;
-      }
+    let recipients = [];
+    for(let i=1;i<this.state.addresses.length;i++){
+      recipients.push(this.state.addresses[i]);
+    }
+    if(recipients.length===0){
+      alert(`You can't send to no one`);
+      return;
     }
     if(this.state.value<0){
       alert(`You can't send a negative amount of tokens`)
       return;
     }
+    if(this.state.value*recipients.length>this.state.balance){
+      alert(`You can't send more tokens than you have`);
+      return;
+    }
     this.setState({
       sendingStatus: true
     })
-    const transaction = await this.bulk.methods.send(AOVAddress, this.state.addresses, this.state.value, "0x0123").send({from: this.state.user})
+    await this.bulk.methods.send(AOVAddress, recipients, this.state.value, "0x0123").send({from: this.state.user})
     .then( 
       (result) => {
         console.log(result);
@@ -98,7 +104,11 @@ class App extends React.Component {
     });
   }
 
-  addRow(){
+  addRow(i){
+    if(!this.web3.utils.isAddress(this.state.addresses[i])){
+      alert(`"${this.state.addresses[i]}" is not an address`);
+      return;
+    }
     this.setState({
       addresses: ["", ...this.state.addresses]
     });
