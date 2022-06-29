@@ -210,20 +210,20 @@ class App extends React.Component {
     return (
       <div className='gradient-bg-welcome'>
         <div className='gradient-bg-welcome flex'>
-          <div className='flex flex-col w-1/3 justify-center items-center'>
+          <div className='flex flex-col w-1/3 items-center'>
             <label className='text-white text-2xl'>AOV</label>
           </div>
-          <div className='flex flex-col w-1/3 justify-center items-center'>
+          <div className='flex flex-col w-1/3 items-center'>
             <label className='text-white text-2xl'>Static Seller</label>
           </div>
-          <div className='flex flex-col w-1/3 justify-center items-center'>
+          <div className='flex flex-col w-1/3 items-center'>
             <label className='text-white'>{status}</label>
             <label className='text-white'>Current Account: {this.state.user.slice(0,6)}...{this.state.user.slice(this.state.user.length-4)}</label>
             <label className='text-white'>My Balance: {this.state.balance}</label>
           </div>
         </div>
         <div className='min-h-screen gradient-bg-services pt-40'>
-          <div className='flex flex-row justify-center items-center'>
+          <div className='flex justify-center items-center'>
             <div className='flex flex-col gradient-bg-card justify-center items-center rounded-3xl border border-gray-800 hover:shadow-lg w-72 h-64 m-5'>
               <label className='text-white pb-2 text-2xl'>Creator</label> 
               <div className=' flex flex-col justify-start items-start'>
@@ -249,11 +249,11 @@ class App extends React.Component {
               }
             </div>
           </div>
-          <div className='flex flex-row justify-center items-center'>
+          <div className='flex justify-center items-center'>
             <div className='flex flex-col gradient-bg-card justify-center items-center rounded-3xl border border-gray-800 hover:shadow-lg w-96 h-64 m-5'>
               <label className='text-white pb-2 text-2xl'>Sellers</label> 
               <div className='flex flex-col justify-start items-start'>
-                <div className='flex flex-row'>
+                <div className='flex'>
                   <label className='text-white p-1'>Seller:</label>
                   <Input 
                     handleChange={(e)=>this.handleSellerAddressChange(e)}
@@ -296,7 +296,7 @@ class App extends React.Component {
               <label className='text-white pb-4 text-2xl'>Set Price</label> 
               <div className=' flex flex-col justify-start items-start'>
                 <label className='text-white p-1'>Seller: {this.state.user.slice(0,6)}...{this.state.user.slice(this.state.user.length-4)}</label>
-                <div className='flex flex-row'>
+                <div className='flex'>
                   <label className='text-white p-1'>Price:</label>
                   <Input
                     handleChange={(e)=>this.handleUserAmountChange(e)}
