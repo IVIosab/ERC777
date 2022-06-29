@@ -119,7 +119,11 @@ You have both RinkebyETH and AOV tokens and can start testing the tokens via
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-For more examples, please refer to:
+You can use the Bulksend and StaticSale web apps via the following links:
+* [BulkSend App](https://bulk-sender.vercel.app/)
+* [StaticSale App](https://static-sale.vercel.app/)
+
+For more information on how to use the web apps, please refer to:
 * [BulkSend App README](https://github.com/IVIosab/ERC777/blob/main/client/bulksender/README.md)
 * [StaticSale App README](https://github.com/IVIosab/ERC777/blob/main/client/staticsale/README.md)
 
