@@ -72,7 +72,7 @@ It allows the third party to transfer tokens on behalf of the token holder where
 
 #### BulkSend Operator
 
-An operator that allows sending tokens from a holder to multiple recipients Implemented in [BulkSend.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/BulkSend.sol<br/>
+An operator that allows sending tokens from a holder to multiple recipients Implemented in [BulkSend.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/BulkSend.sol)<br/>
 The BulkSend allowes the holder to send either a single amount to each of the recipients or a distinct amount of tokens for each recipient<br/>
 <br/>
 You can read more about BulkSend in its respective app [README](https://github.com/IVIosab/ERC777/blob/main/client/bulksender/README.md)<br/>
