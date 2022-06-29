@@ -19,7 +19,8 @@
         <li><a href="#send-hook">Send Hook</a></li>
         <li><a href="#recieve-hook">Recieve Hook</a></li>
         <li><a href="#etherless-transfer-operator">Etherless Transfer Operator</a></li>
-        <li><a href="#bulksend-and-staticsale-operators">BulkSend and StaticSale Operators</a></li>
+        <li><a href="#bulksend-operator">BulkSend Operator</a></li>
+        <li><a href="#staticsale-operator">StaticSale Operator</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
