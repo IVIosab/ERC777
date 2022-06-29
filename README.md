@@ -15,6 +15,11 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#erc777-token">ERC77 Token</a></li>
+        <li><a href="#send-hook">Send Hook</a></li>
+        <li><a href="#recieve-hook">Recieve Hook</a></li>
+        <li><a href="#etherless-transfer-operator">Etherless Transfer Operator</a></li>
+        <li><a href="#bulksend-and-staticsale-operators">BulkSend and StaticSale Operators</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -35,6 +40,36 @@ An implementation of an ERC777 Token with:
 * Send and Receive Hooks
 * BulkSend, StaticSale, EtherlessTransfer Operators
 * Full UI for BulkSend and StaticSale Operators
+
+#### ERC777 Token
+
+A token that follows the [ERC777 standard](https://eips.ethereum.org/EIPS/eip-777) Implemented in [AOV.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/AOV.sol) with the help of [Openzeppelin's ERC777 contract](https://docs.openzeppelin.com/contracts/4.x/api/token/erc777#ERC777) <br/>
+The token has the name "Attack On Vapers" and symbol "AOV" <br/>
+The token is initialized with a totalSupply of 10^10 tokens<br/>
+<br/>
+
+#### Send Hook
+
+A simple send hook that is implemented in [AOVSender.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/AOVSender.sol) with the purpose of controling funds leaving one or more accounts by placing holder-defined rules around the transaction<br/> 
+The hook is called after the transaction's information has been validated and authorized but before the contract's holdings have been updated<br/>
+Its job is to emit an event upon sending a transaction.<br/>
+<br/>
+
+#### Recieve Hook
+A simple recieve hook that is implemented in [AOVRecipient.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/AOVRecipient.sol) with the purpose of controling funds entering one or more accounts by placing holder-defined rules around the transaction<br/>
+The hook is called after the contract's holdings have been updated<br/>
+Its job is to emit an event upon recieving a transaction<br/>
+
+<br/>
+
+#### Etherless Transfer Operator
+
+An operator that allows 0 ether transfer of tokens via a third party that has the signature authority Implemented in [EtherlessTransfer.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/EtherlessTransfer.sol) <br/>
+The Signature Authority is obtained through getting a signed hash of the details of the transaction by the holder<br/>
+It allows the third party to transfer tokens on behalf of the token holder where the third party is the one who pays for the transfer fees<br/>
+<br/>
+
+#### BulkSend and StaticSale Operators
 
 You can read more about BulkSend and StaticSale Operators and their web apps in their respective READMEs:
 * [BulkSend App README](https://github.com/IVIosab/ERC777/blob/main/client/bulksender/README.md)
@@ -109,6 +144,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Understanding ERC-20 token contracts](https://www.wealdtech.com/articles/understanding-erc20-token-contracts/)
 * [Understanding ERC-777 token contracts](https://www.wealdtech.com/articles/understanding-erc777-token-contracts/)
 * [Understanding ERC-777 token operator contracts](https://www.wealdtech.com/articles/understanding-erc777-token-operator-contracts/)
+* [Openzeppelin](https://docs.openzeppelin.com/contracts/4.x/)
 * [Ultimate Tailwind CSS Tutorial](https://www.youtube.com/watch?v=pfaSUYaSgRo&ab_channel=Fireship)
 * [How to Write Better Git Commit Messages](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
 * [Choose an Open Source License](https://choosealicense.com)
