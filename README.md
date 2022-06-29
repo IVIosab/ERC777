@@ -56,25 +56,35 @@ Its job is to emit an event upon sending a transaction.<br/>
 <br/>
 
 #### Recieve Hook
+
 A simple recieve hook that is implemented in [AOVRecipient.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/AOVRecipient.sol) with the purpose of controling funds entering one or more accounts by placing holder-defined rules around the transaction<br/>
 The hook is called after the contract's holdings have been updated<br/>
 Its job is to emit an event upon recieving a transaction<br/>
-
 <br/>
 
 #### Etherless Transfer Operator
 
-An operator that allows 0 ether transfer of tokens via a third party that has the signature authority Implemented in [EtherlessTransfer.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/EtherlessTransfer.sol) <br/>
+An operator that allows 0 ether transfer of tokens via a third party that has the signature authority Implemented in [EtherlessTransfer.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/EtherlessTransfer.sol)<br/>
 The Signature Authority is obtained through getting a signed hash of the details of the transaction by the holder<br/>
 It allows the third party to transfer tokens on behalf of the token holder where the third party is the one who pays for the transfer fees<br/>
 <br/>
 
-#### BulkSend and StaticSale Operators
+#### BulkSend Operator
 
-You can read more about BulkSend and StaticSale Operators and their web apps in their respective READMEs:
-* [BulkSend App README](https://github.com/IVIosab/ERC777/blob/main/client/bulksender/README.md)
-* [StaticSale App README](https://github.com/IVIosab/ERC777/blob/main/client/staticsale/README.md)
+An operator that allows sending tokens from a holder to multiple recipients Implemented in [BulkSend.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/BulkSend.sol<br/>
+The BulkSend allowes the holder to send either a single amount to each of the recipients or a distinct amount of tokens for each recipient<br/>
+<br/>
+You can read more about BulkSend in its respective app [README](https://github.com/IVIosab/ERC777/blob/main/client/bulksender/README.md)<br/>
+<br/>
 
+#### StaticSale Operator
+
+An operator that allows Selling and Buying tokens Implemented in [StaticPriceSeller.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/StaticPriceSeller.sol)<br/>
+The StaticSale allowes holders to register as Seller by setting their PricePerToken<br/>
+It also allowes anyone to buy tokens from a holder with their respective prices<br/>
+<br/>
+You can read more about StaticSale in its respective app [README](https://github.com/IVIosab/ERC777/blob/main/client/staticsale/README.md)<br/>
+<br/>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
