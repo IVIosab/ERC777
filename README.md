@@ -139,8 +139,6 @@ Project Link: [https://github.com/IVIosab/ERC777](https://github.com/IVIosab/ERC
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
 * [Understanding ERC-20 token contracts](https://www.wealdtech.com/articles/understanding-erc20-token-contracts/)
 * [Understanding ERC-777 token contracts](https://www.wealdtech.com/articles/understanding-erc777-token-contracts/)
 * [Understanding ERC-777 token operator contracts](https://www.wealdtech.com/articles/understanding-erc777-token-operator-contracts/)
