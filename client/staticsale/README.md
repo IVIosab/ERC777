@@ -20,7 +20,15 @@
       </ul>
     </li>
     <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#user-information-box">User Information Box</a></li>
+        <li><a href="#creator-card">Creator Card</a></li>
+        <li><a href="#sellers-card">Sellers Card</a></li>
+        <li><a href="#set-price-card">Set Price Card</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -46,6 +54,8 @@ This operator can be used by any ERC777 compatible token<br>
 <div align="center">
   <img src="images/staticsale.png" alt="WebApp" width="744" height="500">
 </div>
+<br>
+<br>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -64,12 +74,42 @@ You have both RinkebyETH and AOV tokens and can start testing the tokens via
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-You can use the Bulksend and StaticSale web apps via the following links:
-* [BulkSend App](https://bulk-sender.vercel.app/)
-* [StaticSale App](https://static-sale.vercel.app/)
+The web app is composed of Four major elements:
+* User Information Box
+* Creator Card 
+* Sellers Card
+* Set Price Card
 
-For more information on how to use the web apps, please refer to:
-* [BulkSend App README](https://github.com/IVIosab/ERC777/blob/main/client/bulksender/README.md)
-* [StaticSale App README](https://github.com/IVIosab/ERC777/blob/main/client/staticsale/README.md)
+#### User Information Box
+<div align="center">
+  <img src="images/information.png" alt="WebApp" width="575" height="200">
+</div>
+<br>
+<br>
+In the top right corner of the app there is 3 lines that describe basic information about the user: <br>
+1. Connection to the app with MetaMask<br>
+2. Current connected account<br>
+3. account's AOV balance<br>
+
+#### Creator Card
+<div align="center">
+  <img src="images/creator.png" alt="WebApp" width="336" height="300">
+</div>
+<br>
+<br>
+
+#### Sellers Card
+<div align="center">
+  <img src="images/sellers.png" alt="WebApp" width="452" height="300">
+</div>
+<br>
+<br>
+
+#### Set Price Card
+<div align="center">
+  <img src="images/price.png" alt="WebApp" width="454" height="300">
+</div>
+<br>
+<br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
