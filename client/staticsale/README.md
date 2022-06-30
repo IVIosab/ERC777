@@ -56,6 +56,8 @@ This operator can be used by any ERC777 compatible token<br>
 </div>
 <br>
 <br>
+The web app allows the users to Buy from either the Creator or other addresses that have put their tokens up for sale<br>
+It also allows uses to put their tokens up for sale by Setting their PricePerToken<br>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -97,6 +99,14 @@ In the top right corner of the app there is 3 lines that describe basic informat
 </div>
 <br>
 <br>
+In the top center of the app there is the Creator Seller Card<br>
+It consists of 3 parts:<br>
+1. Creator Seller Information:<br>
+Which includes the address of the creator, the PricePerToken and the remaining stock of the Creator<br>
+2. Amount Input:<br>
+Where the user inserts the amount of tokens they want to buy<br>
+3. Buy Button:<br>
+Which upon getting clicked initiates the buying process<br>
 
 #### Sellers Card
 <div align="center">
@@ -104,6 +114,17 @@ In the top right corner of the app there is 3 lines that describe basic informat
 </div>
 <br>
 <br>
+In the left center of the app there is the Sellers Card<br>
+It consists of 4 parts:<br>
+1. Seller Address Input:<br>
+Where the user inserts the address of the account they want to buy from. And after that they click the Check button which will update the Seller Information<br>
+2. Seller Information:<br>
+Which includes the PricePerToken and the remaining stock of the Seller<br>
+Note: if the PricePerToken is set to 0 then that means the tokens are not for sale and the UI will show "Not For Sale"<br>
+3. Amount Input:<br>
+Where the user inserts the amount of tokens they want to buy<br>
+4. Buy Button:<br>
+Which upon getting clicked initiates the buying process<br>
 
 #### Set Price Card
 <div align="center">
@@ -111,5 +132,13 @@ In the top right corner of the app there is 3 lines that describe basic informat
 </div>
 <br>
 <br>
+In the right center of the app there is the Set Price Card<br>
+It consists of 3 parts:<br>
+1. User's Information:<br>
+Which includes the User's address and remaining stock<br>
+2. Price Input:<br>
+Where the user can insert the PricePerToken they want to set<br>
+3. Set Button:<br>
+Which upon getting clicked initiates the setting process<br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
