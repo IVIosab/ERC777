@@ -80,8 +80,10 @@ The web app is composed of two major elements:
 
 #### User Information Box
 <div align="center">
-  <img src="images/information.png" alt="WebApp" width="744" height="500">
+  <img src="images/information.png" alt="WebApp" width="575" height="200">
 </div>
+<br>
+<br>
 In the top right corner of the app there is 3 lines that describe basic information about the user: <br>
 1. Connection to the app with MetaMask<br>
 2. Current connected account<br>
@@ -89,8 +91,10 @@ In the top right corner of the app there is 3 lines that describe basic informat
 
 #### Bulk Send UI
 <div align="center">
-  <img src="images/ui.png" alt="WebApp" width="744" height="500">
+  <img src="images/ui.png" alt="WebApp" width="454" height="250">
 </div>
+<br>
+<br>
 In the center of the app there is the major components related to the bulk send operator <br>
 It consists of 3 parts:<br>
 1. Accounts Inputs: <br>Where the user can insert the recipient's address and click the [+] button which will add that address to the list of recipients to send tokens to. After adding an address it will be pushed down to the list of addresses where beside each address there is [x] button which removes the address from the list<br>
