@@ -33,11 +33,11 @@ A web app for the StaticSale Operator that allows token holders to register as s
 
 #### StaticSale Operator
 
-An operator that allows Selling and Buying tokens Implemented in [StaticPriceSeller.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/StaticPriceSeller.sol)<br/>
-The StaticSale allows token holders to register as Seller by setting their PricePerToken<br/>
-And it also allows anyone to buy tokens from a seller by paying ether to the sellers<br/>
-This operator can be used by any ERC777 compatible token</br>
-<br/>
+An operator that allows Selling and Buying tokens Implemented in [StaticPriceSeller.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/StaticPriceSeller.sol)<br>
+The StaticSale allows token holders to register as Seller by setting their PricePerToken<br>
+And it also allows anyone to buy tokens from a seller by paying ether to the sellers<br>
+This operator can be used by any ERC777 compatible token<br>
+<br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
