@@ -42,7 +42,9 @@ This operator can be used by any ERC777 compatible token</br>
 
 #### BulkSend App
 
-
+<div align="center">
+  <img src="images/bulksend.png" alt="WebApp" width="80" height="80">
+</div>
 
 <!-- GETTING STARTED -->
 ## Getting Started
