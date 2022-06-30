@@ -42,12 +42,14 @@ An implementation of an ERC777 Token with:
 * BulkSend, StaticSale, EtherlessTransfer Operators
 * Full UI for BulkSend and StaticSale Operators
 
+
 #### ERC777 Token
 
 A token that follows the [ERC777 standard](https://eips.ethereum.org/EIPS/eip-777) Implemented in [AOV.sol](https://github.com/IVIosab/ERC777/blob/main/contracts/AOV.sol) with the help of [Openzeppelin's ERC777 contract](https://docs.openzeppelin.com/contracts/4.x/api/token/erc777#ERC777) <br/>
 The token has the name "Attack On Vapers" and symbol "AOV" <br/>
 The token is initialized with a totalSupply of 10^10 tokens<br/>
 <br/>
+[Etherscan Contract Address](https://rinkeby.etherscan.io/address/0x981640516a5A2a88f9250f42569d6a405A6279de)
 
 #### Send Hook
 
@@ -62,6 +64,7 @@ A simple recieve hook that is implemented in [AOVRecipient.sol](https://github.c
 The hook is called after the contract's holdings have been updated<br/>
 Its job is to emit an event upon recieving a transaction<br/>
 <br/>
+[Etherscan Contract Address](https://rinkeby.etherscan.io/address/0x8Fd84Ecc3409235c2Ed9D3eD146dE9EBe8213CC9)
 
 #### Etherless Transfer Operator
 
@@ -69,6 +72,7 @@ An operator that allows 0 ether transfer of tokens via a third party that has th
 The Signature Authority is obtained through getting a signed hash of the details of the transaction by the holder<br/>
 It allows the third party to transfer tokens on behalf of the token holder where the third party is the one who pays for the transfer fees<br/>
 <br/>
+[Etherscan Contract Address](https://rinkeby.etherscan.io/address/0x9950e59310458435250d2c35302424cA712527F4)
 
 #### BulkSend Operator
 
@@ -77,6 +81,7 @@ The BulkSend allowes the holder to send either a single amount to each of the re
 <br/>
 You can read more about BulkSend in its respective app [README](https://github.com/IVIosab/ERC777/blob/main/client/bulksender/README.md)<br/>
 <br/>
+[Etherscan Contract Address](https://rinkeby.etherscan.io/address/0x2c4f2FC34362e1c7E998E0134FaAb61042DDDD49)
 
 #### StaticSale Operator
 
@@ -86,6 +91,7 @@ It also allowes anyone to buy tokens from a holder with their respective prices<
 <br/>
 You can read more about StaticSale in its respective app [README](https://github.com/IVIosab/ERC777/blob/main/client/staticsale/README.md)<br/>
 <br/>
+[Etherscan Contract Address](https://rinkeby.etherscan.io/address/0x689324B0C82Ce5E779b88A55B1687cFa891c6DC9)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
